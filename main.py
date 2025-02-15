@@ -2,7 +2,7 @@ import speech_recognition as sr
 from gtts import gTTS
 import google.generativeai as genai
 import pygame as pg
-API="AIzaSyBtWZLTWfl3yAqqFI2SIsTICaiGhg23UD8"
+API="Your_API_Key"
 genai.configure(api_key=API)
 
 pg.mixer.init()
