@@ -1,5 +1,4 @@
 import speech_recognition as sr
-import subprocess
 from gtts import gTTS
 import google.generativeai as genai
 import pygame as pg
@@ -23,9 +22,7 @@ def listen_part():
             print(f"Gemini:{a if response else 'No response from Gemini.'}")        
             tts_fr = gTTS(a, lang='fr',slow=False)
             tts_fr.save("GG.mp3")
-            subprocess.run(["ffmpeg", "-i", "GG.mp3", "-filter:a", "atempo=1.5", "-y", "faster.mp3"])
-            subprocess.run(["mpg321", "faster.mp3"])
-
+            
             pg.mixer.music.load("GG.mp3")
             pg.mixer.music.set_volume(1.0)  
             pg.mixer.music.play()
@@ -33,6 +30,7 @@ def listen_part():
             while pg.mixer.music.get_busy():
                     # pg.time.Clock().tick(10) 
                 '''uncomment above  if trash pc'''
+                    pass
 
             pg.mixer.quit()                
     
